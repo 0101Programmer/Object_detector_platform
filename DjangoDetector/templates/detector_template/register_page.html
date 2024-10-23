@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration page</title>
+    <link rel="stylesheet" type="text/css" href='{% static "detector_style/register_page.css" %}'>
+</head>
+<body>
+    <div class="menu_color">
+        <div class="menu">
+            <div class="menu_header">
+                <h3>Object detector platform</h3>
+            </div>
+            <a class="menu_link" href="/">| Домашняя страница</a>
+            <a class="menu_link" href="/login_page">| Авторизация</a>
+            <a class="menu_link" href="#">| Регистрация |</a>
+            Текущий пользователь: {{ current_session_user }}
+        </div>
+    </div>
+    <div class="header1">
+        <h1>
+        Регистрация
+        </h1>
+    </div>
+    <div class="register_menu">
+        <form method="post">
+            {% csrf_token %}
+            <label for="username">Введите логин</label>
+            <br>
+            <input type="text" id="username" name="username" maxlength="30" required>
+            <br><br>
+            Требования:
+            <li>Обязательное поле</li>
+            <li>Максимальное кол-во символов: 30</li>
+            <li>Можно использовать спецсимволы</li>
+            <li>Логин должен быть уникальным и не повторяться с уже имеющимися в базе данных</li>
+            <br><br>
+            <label for="password">Введите пароль</label>
+            <br>
+            <input id="password" name="password" minlength="8" required>
+            <br><br>
+            Требования:
+            <li>Обязательное поле</li>
+            <li>Минимальное кол-во символов: 8</li>
+            <li>Можно использовать спецсимволы</li>
+            <br><br>
+            <label for="repeat_password">Повторите пароль</label>
+            <br>
+            <input id="repeat_password" name="repeat_password" minlength="8" required>
+            <br><br>
+            <button type="submit">Зарегистрироваться</button>
+        </form>
+    </div>
+</body>
+</html>

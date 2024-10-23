@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href='{% static "detector_style/user_not_found_page.css" %}'>
+</head>
+<body>
+    <h1>Пользователь не найден</h1>
+    <p>Возможно вы ввели неверный пароль или логин</p>
+    <a href="/login_page">Попробовать ещё раз</a>
+    <p>Либо пользователя несуществует</p>
+    <a href="/register_page">Зарегистрироваться</a>
+</body>
+</html>

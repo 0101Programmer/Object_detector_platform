@@ -1,0 +1,32 @@
+body {
+    background-color: #F0FFF0;
+}
+
+.menu_color {
+    background-color: #FFFFE0;
+}
+.menu_header {
+    display: inline-block;
+}
+
+.menu {
+    display: inline-block;
+}
+
+.menu_link {
+    text-decoration: none;
+    color: black;
+}
+
+.header1 {
+    text-align: center;
+}
+
+.under_header1_text {
+    text-align: left;
+}
+
+.under_header1_link {
+    text-decoration: none;
+    font-weight: bold;
+}

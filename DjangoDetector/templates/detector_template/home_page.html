@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object detector main page</title>
+    <link rel="stylesheet" type="text/css" href='{% static "detector_style/home_page.css" %}'>
+</head>
+<body>
+    <div class="menu_color">
+        <div class="menu">
+            <div class="menu_header">
+                <h3>Object detector platform</h3>
+            </div>
+            <a class="menu_link" href="#">| Домашняя страница</a>
+            <a class="menu_link" href="/login_page">| Авторизация</a>
+            <a class="menu_link" href="/register_page">| Регистрация |</a>
+            Текущий пользователь: {{ current_session_user }}
+        </div>
+    </div>
+    <div class="header1">
+        <h1>
+        Добро пожаловать на "Object detector platform" - сайт для распознавания объектов по фото!
+        </h1>
+    </div>
+    <div class="under_header1_text">
+        <p>
+            Это домашняя страница.
+            <br>
+            <a class="under_header1_link" href="/object_detector_page">Отсюда можно перейти к распознаванию объектов</a>, зарегистрироваться, авторизироваться или выйти из профиля.
+            <br>
+            Сейчас вы вошли как: {{ current_session_user }}
+            <br>
+            <form method="post">
+            {% csrf_token %}
+            <button type="submit">Выйти</button>
+        </form>
+        </p>
+    </div>
+</body>
+</html>

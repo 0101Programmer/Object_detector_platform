@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard page</title>
+    <link rel="stylesheet" type="text/css" href='{% static "detector_style/object_detector_page.css" %}'>
+</head>
+<body>
+    <div class="menu_color">
+        <div class="menu">
+            <div class="menu_header">
+                <h3>Object detector platform</h3>
+            </div>
+            <a class="menu_link" href="/">| Домашняя страница</a>
+            <a class="menu_link" href="/login_page">| Авторизация</a>
+            <a class="menu_link" href="/register_page">| Регистрация |</a>
+            Текущий пользователь: {{ current_session_user }}
+        </div>
+    </div>
+    <div class="header1">
+        <h1>
+        Здесь вы можете загрузить фото и обработать его, а также посмотреть на уже добавленные и обработанные
+        </h1>
+    </div>
+    <div class="under_header1_links">
+        <a href="/pic_load_page">Добавить и обработать новое изображение</a>
+        <br><br>
+        <a href="/myapp_images">Добавленные изображения</a>
+        <br><br>
+        <a href="/processed_user_images">Обработанные изображения</a>
+    </div>
+</body>
+</html>

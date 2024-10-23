@@ -1,0 +1,14 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Unsuccessful registration</title>
+    <link rel="stylesheet" type="text/css" href='{% static "detector_style/invalid_user_registration_page.css" %}'>
+</head>
+<body>
+    <h1>Неуспешная регистрация</h1>
+    <p>!| {{ user_error }} |!</p>
+    <a href="/register_page">Попробовать ещё раз</a>
+</body>
+</html>

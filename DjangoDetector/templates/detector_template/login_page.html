@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Authorization page</title>
+    <link rel="stylesheet" type="text/css" href='{% static "detector_style/login_page.css" %}'>
+</head>
+<body>
+    <div class="menu_color">
+        <div class="menu">
+            <div class="menu_header">
+                <h3>Object detector platform</h3>
+            </div>
+            <a class="menu_link" href="/">| Домашняя страница</a>
+            <a class="menu_link" href="#">| Авторизация</a>
+            <a class="menu_link" href="/register_page">| Регистрация |</a>
+            Текущий пользователь: {{ current_session_user }}
+        </div>
+    </div>
+    <div class="header1">
+        <h1>
+        Авторизация
+        </h1>
+    </div>
+    <div class="login_menu">
+        <form method="get">
+            {% csrf_token %}
+            <label for="username">Введите логин</label>
+            <br>
+            <input type="text" id="username" name="username" maxlength="30" required>
+            <br><br>
+            <label for="password">Введите пароль</label>
+            <br>
+            <input id="password" name="password" minlength="8" required>
+            <br><br>
+            <button type="submit">Авторизироваться</button>
+        </form>
+        <br>
+        Ещё нет аккаунта?
+        <br>
+        <a href="/register_page">Зарегистрироваться</a>
+    </div>
+</body>
+</html>

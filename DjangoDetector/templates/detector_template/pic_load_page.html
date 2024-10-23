@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard page</title>
+    <link rel="stylesheet" type="text/css" href='{% static "detector_style/object_detector_page.css" %}'>
+</head>
+<body>
+    <div class="header1">
+        <h1>
+        Загрузка фото для пользователя {{ current_session_user }}
+        </h1>
+    </div>
+    {% block content %}
+    <form method = "post", enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Отправить фото на серевер</button>
+    </form>
+    {% endblock %}
+    <br>
+    <a href="/object_detector_page">Назад</a>
+    <br><br>
+</body>
+</html>

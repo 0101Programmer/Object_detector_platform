@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ current_session_user }} images</title>
+    <link rel="stylesheet" type="text/css" href='{% static "detector_style/invalid_password_registration_page.css" %}'>
+</head>
+<body>
+    Все изображения, добавленные пользователем {{ current_session_user }}, показаны на этой странице
+    <br><br>
+    <a href="/object_detector_page">Назад</a>
+    <br><br>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Удалить все загруженные фото</button>
+    </form>
+    <br><br>
+    {% for img in get_current_user_pics %}
+        <div class="col-md-4">
+            <a href="{{ img.image.url }}" target="_blank"><img src="{{ img.image.url }}" style="width: 20%; float: left; margin-right: 10px;" /></a>
+        </div>
+    {% endfor %}
+</body>
+</html>

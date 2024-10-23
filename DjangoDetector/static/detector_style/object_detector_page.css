@@ -1,0 +1,20 @@
+body {
+    background-color: #F0FFF0;
+}
+
+.menu_color {
+    background-color: #FFFFE0;
+}
+
+.menu_header {
+    display: inline-block;
+}
+
+.menu {
+    display: inline-block;
+}
+
+.menu_link {
+    text-decoration: none;
+    color: black;
+}
